@@ -1,0 +1,12 @@
+
+<h1>New Borrowing</h1>
+
+<% if flash[:error] %>
+  <div class="alert alert-danger" role="alert">
+    <%= flash[:error] %>
+  </div>
+<% end %>
+
+<%= render 'form', borrowing: @borrowing %>
+
+<%= link_to 'Back', borrowings_path %>

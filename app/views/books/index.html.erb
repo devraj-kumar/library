@@ -1,0 +1,22 @@
+<h1>Books Stock in Library</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Quantity</th>
+      <th>  Available quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.quantity %></td>
+        <td><%= book.quantity - book.borrowings.count %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Book', new_book_path %>

@@ -1,0 +1,13 @@
+<!-- app/views/users/show.html.erb -->
+<p><strong>Name:</strong> <%= @user.name %></p>
+
+<h2>My Borrowings</h2>
+<% if @borrowings.any? %>
+  <ul>
+    <% @borrowings.each do |borrowing| %>
+      <li><%= borrowing.book.title %> - Borrowed on <%= borrowing.created_at %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No borrowings found.</p>
+<% end %>
